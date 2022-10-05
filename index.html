@@ -8,35 +8,35 @@
 </head>
 <body>
     <header><h1>Welcome to the Coding Quiz!</h1></header>
-    <p>Click "start" to start the timed quiz!</p>
+    <p id = "start">Click "start" to start the timed quiz!</p>
     <button id="start" type="button">Start</button>
     <div id="first-question">
         <h2>Which of the following pseudo-classes would you use in CSS to change the class of an element while the mouse is on it?</h2>
-        <button class="answers" class = "incorrect">____:active</button>
-        <button class="answers" class = "correct">____:hover</button>
-        <button class="answers" class = "incorrect">____:focus</button>
-        <button class="answers" class = "incorrect">____:not(_)</button>
+        <button class="answers" id = "first-incorrect">____:active</button>
+        <button class="answers" id = "first-correct">____:hover</button>
+        <button class="answers" id = "first-incorrect">____:focus</button>
+        <button class="answers" id = "first-incorrect">____:not(_)</button>
     </div>
     <div id="second-question">
         <h2>Which HTML element contains the text that goes on the tab above the webpage?</h2>
-        <button class="answers" class = "incorrect">!DOCTYPE></button>
-        <button class="answers" class = "incorrect">body</button>
-        <button class="answers" class = "incorrect">div</button>
-        <button class="answers" class = "correct">title</button>
+        <button class="answers" id = "second-incorrect">!DOCTYPE></button>
+        <button class="answers" id = "second-incorrect">body</button>
+        <button class="answers" id = "second-incorrect">div</button>
+        <button class="answers" id = "second-correct">title</button>
     </div>
     <div id="third-question">
         <h2>Which of the following is a way to store groups of data into a single variable?</h2>
-        <button class="answers" class = "correct">Arrays</button>
-        <button class="answers" class = "incorrect">Functions</button>
-        <button class="answers" class = "incorrect">Objects</button>
-        <button class="answers" class = "incorrect">Conditional Statements</button>
+        <button class="answers" id = "third-correct">Arrays</button>
+        <button class="answers" id = "third-incorrect">Functions</button>
+        <button class="answers" id = "third-incorrect">Objects</button>
+        <button class="answers" id = "third-incorrect">Conditional Statements</button>
     </div>
     <div id="fourth-question">
         <h2>How do you halt event bubbling?</h2>
-        <button class="answers" class = "incorrect">Domain Object Model (DOM)</button>
-        <button class="answers" class = "incorrect">JSON.parse(<u>Object</u>)</button>
-        <button class="answers" class = "incorrect">.trim()</button>
-        <button class="answers" class = "correct">event.stopPropagation</button>
+        <button class="answers" id = "fourth-incorrect">Domain Object Model (DOM)</button>
+        <button class="answers" id = "fourth-incorrect">JSON.parse(<u>Object</u>)</button>
+        <button class="answers" id = "fourth-incorrect">.trim()</button>
+        <button class="answers" id = "fourth-correct">event.stopPropagation</button>
     </div>
     <div id = "done"></div>
     <script src = "./assets/script.js"></script>
