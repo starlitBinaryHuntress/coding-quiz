@@ -10,6 +10,7 @@
     <header><h1 id = "header">Welcome to the Coding Quiz!</h1></header>
     <p class = "start">Click "start" to start the timed quiz!</p>
     <button id="start" class ="start" type="button">Start</button>
+    <div id="timer"></div>
     <div id="first-question">
         <h2>Which of the following pseudo-classes would you use in CSS to change the class of an element while the mouse is on it?</h2>
         <button class="answers" id = "first-incorrect">____:active</button>
@@ -38,7 +39,14 @@
         <button class="answers" id = "fourth-incorrect">.trim()</button>
         <button class="answers" id = "fourth-correct">event.stopPropagation</button>
     </div>
-    <div id = "done"></div>
+    <div id = "finished-quiz">
+        <h2>Well Done!</h2>
+    </div>
+    <div id="game-over">
+        <h2>Game Over</h2>
+        <p>Try again?</p>
+        <button id="restart" type="button">Restart</button>
+    </div>
     <script src = "./assets/script.js"></script>
 </body>
 </html>
