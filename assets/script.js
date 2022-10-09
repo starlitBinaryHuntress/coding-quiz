@@ -21,6 +21,8 @@ var gameOver = document.querySelector('#game-over')
 
 var restart = document.querySelector('#restart')
 
+var scores = document.querySelector("#high-scores")
+
 //set the questions to disappear
 
 first.style.display = "none";
@@ -29,6 +31,7 @@ third.style.display = "none";
 fourth.style.display = "none";
 finishedText.style.display = "none";
 gameOver.style.display = "none";
+scores.style.display = "none"
 
 function startQuiz () {
     //make start button & intro disappear
@@ -58,24 +61,21 @@ function startQuiz () {
     first.style.display = "block";
 
     let correct = document.querySelector('#first-correct');
+    let incorrect = document.querySelector('.first-incorrect');
 
-    let incorrect = document.querySelector('#first-incorrect');
-
-    function removeTime (event) {
+    function removeTime () {
         time = time-5;
     }
 
     correct.addEventListener("click", secondQuestion);
     incorrect.addEventListener("click", removeTime);
 
-
-
     function secondQuestion () {
         //display second question
         first.style.display = "none";
         second.style.display = "block";
         let correct = document.querySelector('#second-correct');
-        let incorrect = document.querySelector('#second-incorrect');
+        let incorrect = document.querySelectorAll('.second-incorrect');
         correct.addEventListener("click", thirdQuestion);
         incorrect.addEventListener("click", removeTime);
     }
@@ -85,7 +85,7 @@ function startQuiz () {
         second.style.display = "none";
         third.style.display = "block";
         let correct = document.querySelector('#third-correct');
-        let incorrect = document.querySelector('#third-incorrect');
+        let incorrect = document.querySelectorAll('.third-incorrect');
         correct.addEventListener("click", fourthQuestion);
         incorrect.addEventListener("click", removeTime);
     }
@@ -95,7 +95,7 @@ function startQuiz () {
         third.style.display = "none";
         fourth.style.display = "block";
         let correct = document.querySelector('#fourth-correct');
-        let incorrect = document.querySelector('#fourth-incorrect');
+        let incorrect = document.querySelectorAll('.fourth-incorrect');
         correct.addEventListener("click", finishedQuiz);
         incorrect.addEventListener("click", removeTime);
     }
@@ -105,6 +105,11 @@ function startQuiz () {
         finishedText.style.display = "block";
         fourth.style.display = "none";
         timer.style.display = "none";
+        gameOver.style.display = "none";
+        scores.style.display = "block";
+        clearInterval(countdown);
+
+        //add local storage for scores
     }
 
     //Display Game Over Prompt
