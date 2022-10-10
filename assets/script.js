@@ -23,6 +23,12 @@ var restart = document.querySelector('#restart')
 
 var scores = document.querySelector("#high-scores")
 
+ //label the correct answer
+ var correct = document.querySelector('#first-correct');
+ //label the wrong answers
+ var incorrect = document.querySelectorAll('.first-incorrect');
+
+
 //set the questions to disappear
 
 first.style.display = "none";
@@ -60,25 +66,21 @@ function startQuiz () {
     //let the first question and possible answers be shown
     first.style.display = "block";
 
-    //label the correct answer
-    var correct = document.querySelector('#first-correct');
-    //label the wrong answers
-    var incorrect = document.querySelectorAll('.first-incorrect');
-
+   
     //add eventlistener to correct answer to move on to second question
     correct.addEventListener("click", secondQuestion);
 
     //add function to remove time
     
-    function removeTime () {
-        return time = time-5;
+    function removeTime (event) {
+        time = time-5;
     };
 
     //add eventListener to incorrect answers to remove time
 
     //Attempt #1
 
-    // incorrect.addEventListener("click", removeTime());
+    incorrect.addEventListener("click", removeTime);
 
 
     //Attempt#2
