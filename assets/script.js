@@ -72,16 +72,16 @@ function startQuiz () {
 
     //add function to remove time
     
-    function removeTime (event) {
+    function removeTime () {
         time = time-5;
     };
 
     //add eventListener to incorrect answers to remove time
 
     //Attempt #1
-
-    incorrect.addEventListener("click", removeTime);
-
+    for(element of incorrect) {
+    element.addEventListener("click", removeTime);
+    }
 
     //Attempt#2
     //incorrect.forEach(element => removeTime());
@@ -97,7 +97,9 @@ function startQuiz () {
         var correct = document.querySelector('#second-correct');
         var incorrect = document.querySelectorAll('.second-incorrect');
         correct.addEventListener("click", thirdQuestion);
-        incorrect.addEventListener("click", removeTime);
+        for(element of incorrect) {
+            element.addEventListener("click", removeTime);
+            }
     }
 
     function thirdQuestion () {
@@ -107,7 +109,9 @@ function startQuiz () {
         var correct = document.querySelector('#third-correct');
         var incorrect = document.querySelectorAll('.third-incorrect');
         correct.addEventListener("click", fourthQuestion);
-        incorrect.addEventListener("click", removeTime);
+        for(element of incorrect) {
+            element.addEventListener("click", removeTime);
+            }
     }
 
     function fourthQuestion () {
@@ -117,7 +121,9 @@ function startQuiz () {
         var correct = document.querySelector('#fourth-correct');
         var incorrect = document.querySelectorAll('.fourth-incorrect');
         correct.addEventListener("click", finishedQuiz);
-        incorrect.addEventListener("click", removeTime);
+        for(element of incorrect) {
+            element.addEventListener("click", removeTime);
+            }
     }
 
     //Display Finished Quiz Prompt
