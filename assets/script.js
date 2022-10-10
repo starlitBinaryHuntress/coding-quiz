@@ -31,7 +31,7 @@ third.style.display = "none";
 fourth.style.display = "none";
 finishedText.style.display = "none";
 gameOver.style.display = "none";
-scores.style.display = "none"
+scores.style.display = "none";
 
 function startQuiz () {
     //make start button & intro disappear
@@ -41,7 +41,7 @@ function startQuiz () {
     gameOver.style.display = "none";
 
     //create a timer
-    let time = 100;
+    let time = 99;
     myTimer()
     timer.style.display = "block";
     timer.style.fontSize = "50px";
@@ -60,22 +60,33 @@ function startQuiz () {
     //let the first question and possible answers be shown
     first.style.display = "block";
 
-    let correct = document.querySelector('#first-correct');
-    let incorrect = document.querySelector('.first-incorrect');
+    //label the correct answer
+    var correct = document.querySelector('#first-correct');
+    //label the wrong answers
+    var incorrect = document.querySelectorAll('.first-incorrect');
 
-    function removeTime () {
-        time = time-5;
-    }
-
+    //add eventlistener to correct answer to move on to second question
     correct.addEventListener("click", secondQuestion);
-    incorrect.addEventListener("click", removeTime);
+
+    //add eventListener to incorrect answers to remove time
+
+    //Attempt #1
+    // incorrect.addEventListener("click", removeTime());
+
+    // function removeTime () {
+    //     return time = time-5;
+    // }
+
+    //Attempt#2
+    incorrect.forEach()
+
 
     function secondQuestion () {
         //display second question
         first.style.display = "none";
         second.style.display = "block";
-        let correct = document.querySelector('#second-correct');
-        let incorrect = document.querySelectorAll('.second-incorrect');
+        var correct = document.querySelector('#second-correct');
+        var incorrect = document.querySelectorAll('.second-incorrect');
         correct.addEventListener("click", thirdQuestion);
         incorrect.addEventListener("click", removeTime);
     }
@@ -84,8 +95,8 @@ function startQuiz () {
         //display third question
         second.style.display = "none";
         third.style.display = "block";
-        let correct = document.querySelector('#third-correct');
-        let incorrect = document.querySelectorAll('.third-incorrect');
+        var correct = document.querySelector('#third-correct');
+        var incorrect = document.querySelectorAll('.third-incorrect');
         correct.addEventListener("click", fourthQuestion);
         incorrect.addEventListener("click", removeTime);
     }
@@ -94,8 +105,8 @@ function startQuiz () {
         //display fourth question
         third.style.display = "none";
         fourth.style.display = "block";
-        let correct = document.querySelector('#fourth-correct');
-        let incorrect = document.querySelectorAll('.fourth-incorrect');
+        var correct = document.querySelector('#fourth-correct');
+        var incorrect = document.querySelectorAll('.fourth-incorrect');
         correct.addEventListener("click", finishedQuiz);
         incorrect.addEventListener("click", removeTime);
     }
