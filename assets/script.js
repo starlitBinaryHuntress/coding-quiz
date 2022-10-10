@@ -68,17 +68,24 @@ function startQuiz () {
     //add eventlistener to correct answer to move on to second question
     correct.addEventListener("click", secondQuestion);
 
+    //add function to remove time
+    
+    function removeTime () {
+        return time = time-5;
+    };
+
     //add eventListener to incorrect answers to remove time
 
     //Attempt #1
+
     // incorrect.addEventListener("click", removeTime());
 
-    // function removeTime () {
-    //     return time = time-5;
-    // }
 
     //Attempt#2
-    incorrect.forEach()
+    //incorrect.forEach(element => removeTime());
+    //I don't think so
+
+    //Attempt#3
 
 
     function secondQuestion () {
