@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/style.css" rel="stylesheet">
     <title>Coding Quiz</title>
 </head>
 <body>
@@ -11,7 +12,16 @@
     <p class = "start">Click "start" to start the timed quiz!</p>
     <button id="start" class ="start" type="button">Start</button>
     <div id="timer"></div>
-    <!-- <div id="first-question">
+    <!-- <div class="container">
+    <div id = "question" class="hide">Question</div>
+    <div id="answer-btns" class="btn-grid">
+        <button class="btn hide">Answer 1</button>
+        <button class="btn hide">Answer 2</button>
+        <button class="btn hide">Answer 3</button>
+        <button class="btn hide">Answer 4</button>
+    </div>
+    </div> -->
+    <div id="first-question">
         <h2>Which of the following pseudo-classes would you use in CSS to change the class of an element while the mouse is on it?</h2>
         <button class="answers" class = "first-incorrect">____:active</button>
         <button class="answers" id = "first-correct">____:hover</button>
@@ -50,7 +60,7 @@
         <h2>Game Over</h2>
         <p>Try again?</p>
         <button id="restart" type="button">Restart</button>
-    </div> -->
+    </div>
     <script src = "./assets/script.js"></script>
 </body>
 </html>
