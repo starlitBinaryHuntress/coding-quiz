@@ -5,8 +5,6 @@ var startBtn = document.querySelector("#start");
 
 var start = document.querySelector('.start');
 
-// var question = document.querySelector('#question');
-
 var first = document.querySelector("#first-question");
 
 var second = document.querySelector("#second-question");
@@ -19,112 +17,49 @@ var finishedText = document.querySelector('#finished-quiz');
 
 var timer = document.querySelector('#timer');
 
-timer.style.fontSize = "50px";
-
 var gameOver = document.querySelector('#game-over')
 
 var restart = document.querySelector('#restart');
 
 var scores = document.querySelector("#high-scores");
 
-// var h2 = document.querySelector("#question-container");
+var firstCorrect = document.querySelector(".first-correct");
 
-// var questions = [
-//     {
-//     question: 'Which of the following pseudo-classes would you use in CSS to change the class of an element while the mouse is over it?',
-//     answers: [
-//         {text: '____:active', correct: false},
-//         {text: '____:hover', correct: true},
-//         {text: '____:focus', correct: false},
-//         {text: '____:not()', correct: false}
-//     ]
-// }, {
-//     question: 'Which HTML element contains the text that goes on the tab above the webpage?',
-//     answers: [
-//         {text: '!DOCTYPE', correct: false},
-//         {text: 'body', correct: false},
-//         {text: 'div', correct: false},
-//         {text: 'title', correct: true}
-//     ]
-// }, {
-//     question: 'Which of the following is a way to store groups of data into a single variable?',
-//     answers: [
-//         {text: 'arrays', correct: true},
-//         {text: 'functions', correct: false},
-//         {text: 'objects', correct: false},
-//         {text: 'conditional', correct: false}
-//     ]
-// }, {
-//     question: 'How do you halt event bubbling?',
-//     answers: [
-//         {text: 'Domain Object Model (DOM)', correct: false},
-//         {text: 'JSON.parse', correct: false},
-//         {text: '.trim()', correct: false},
-//         {text: 'event.stopPropagation', correct: true}
-//     ]
-// }
-// ];
+var secondCorrect = document.querySelector(".second-correct");
 
-// function startTimer () {
-//     let time = 99;
-//     let countdown = setInterval(function () {
-//              timer.innerHTML = "00:" + time;
-//              time--;
-//              if (time < 0) {
-//                  clearInterval(countdown);
-//                  gameOver();
-//              }
-//          }, 1000);
-     
-// };
+var thirdCorrect = document.querySelector(".third-correct");
 
-// function showNextQuestion () {
+var fourthCorrect = document.querySelector(".fourth-correct");
 
-// };
+var firstFirst = document.querySelector("#first-first");
 
-// function hideStartPage(){
-//     start.style.display = "none";
-//     startBtn.style.display = "none";
-//     h1.style.display = "none";
-// };
+var firstSecond = document.querySelector("#first-second");
 
-// function startQuiz(){
-//     startBtn.classList.add('hide');
-//     question.classList.remove('hide');
-//     showNextQuestion()
-// };
+var firstThird = document.querySelector("#first-third");
 
-// function endGame (){
-//     h2.style.display = "Well Done!";
-//     timer.style.display = "none";
-//     scores.style.display = "block";
-//     clearInterval(countdown);
-// };
+var secondFirst = document.querySelector("#second-first");
 
-// function enterInitials (){};
+var secondSecond = document.querySelector("#second-second");
 
-// function showHighScores (){};
+var secondThird = document.querySelector("#second-third");
 
-// function gameOver (){
+var thirdFirst = document.querySelector("#third-first");
 
-// };
+var thirdSecond = document.querySelector("#third-second");
 
-// startBtn.addEventListener("click", () => {
-//     startTimer(); 
-//     hideStartPage(); 
-//     startQuiz ();
-// });
+var thirdThird = document.querySelector("#third-third");
 
-// startBtn.addEventListener("click", startQuiz)
+var fourthFirst = document.querySelector("#fourth-first");
+
+var fourthSecond = document.querySelector("#fourth-second");
+
+var fourthThird = document.querySelector("#fourth-third");
+
+var score = 0;
 
 let time = 99;
 
-//label the correct answer
-  var correct = document.querySelector('#first-correct');
-//label the wrong answers
-  var incorrect = document.querySelectorAll('.first-incorrect');
-
-//set the questions to disappear
+timer.style.fontSize = "50px";
 
 first.style.display = "none";
 second.style.display = "none";
@@ -134,23 +69,22 @@ finishedText.style.display = "none";
 gameOver.style.display = "none";
 scores.style.display = "none";
 
+function correctAns () {
+    score = score + 10;
+}
+
 function secondQuestion () {
     //display second question
     first.style.display = "none";
     second.style.display = "block";
-    var correct = document.querySelector('#second-correct');
-    var incorrect = document.querySelectorAll('.second-incorrect');
-    //correct.addEventListener("click", thirdQuestion);
-    
+    correct.addEventListener("click", thirdQuestion);
 }
 
 function thirdQuestion () {
     //display third question
     second.style.display = "none";
     third.style.display = "block";
-    var correct = document.querySelector('#third-correct');
-    var incorrect = document.querySelectorAll('.third-incorrect');
-    // correct.addEventListener("click", fourthQuestion);
+    correct.addEventListener("click", fourthQuestion);
     
 }
 
@@ -158,10 +92,7 @@ function fourthQuestion () {
     //display fourth question
     third.style.display = "none";
     fourth.style.display = "block";
-    var correct = document.querySelector('#fourth-correct');
-    var incorrect = document.querySelectorAll('.fourth-incorrect');
-    //correct.addEventListener("click", finishedQuiz);
-    
+    correct.addEventListener("click", finishedQuiz);
 }
 
 function myTimer(){
@@ -187,8 +118,6 @@ function finishedQuiz () {
     timer.style.display = "none";
     gameOver.style.display = "none";
     scores.style.display = "block";
-    clearInterval(countdown);
-
     //add local storage for scores
 }
 
@@ -208,6 +137,7 @@ function startQuiz () {
     startBtn.style.display = "none";
     h1.style.display = "none";
     gameOver.style.display = "none";
+    second.style.display = "none";
 
     //create a timer
     myTimer()
@@ -216,6 +146,16 @@ function startQuiz () {
 
     //let the first question and possible answers be shown
     first.style.display = "block";
+
+    firstFirst.addEventListener("click", removeTime())
+    firstSecond.addEventListener("click", removeTime)
+    firstThird.addEventListener("click", removeTime)
+    correct.addEventListener("click", secondQuestion())
+
+    //create a timer
+    myTimer()
+    timer.style.display = "block";
+    timer.style.fontSize = "50px";
 
     //add eventlistener to correct answer to move on to second question JK RIDER SAID TO USE A CONDITIONAL STATEMENT LET'S TRY THAT
     //correct.addEventListener("click", secondQuestion);
@@ -233,7 +173,6 @@ function startQuiz () {
     //I don't think so
 
     //Attempt#3 - conditional statement
-    
 
 }
 
